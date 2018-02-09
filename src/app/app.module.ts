@@ -1,3 +1,4 @@
+import { PerfilService } from './_service/perfil.service';
 import { PlatoService } from './_service/plato.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -37,6 +38,7 @@ import { LoginService } from './_service/login.service';
 import { LoginGuard } from './_service/login-guard.service';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PerfilDetalleComponent } from './perfil/perfil-detalle/perfil-detalle.component';
+import { PrincipalComponent } from './perfil/principal/principal.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ import { PerfilDetalleComponent } from './perfil/perfil-detalle/perfil-detalle.c
     SimpleModalComponent,
     LoginComponent,
     PerfilComponent,
-    PerfilDetalleComponent    
+    PerfilDetalleComponent,
+    PrincipalComponent    
   ],
   imports: [
     BrowserModule,
@@ -72,7 +75,7 @@ import { PerfilDetalleComponent } from './perfil/perfil-detalle/perfil-detalle.c
     BsDatepickerModule.forRoot(),
     AlertModule.forRoot()
   ],
-  providers: [PlatoService, ConsumoService, ConsultaService, ClienteService, LoginService, LoginGuard ],
+  providers: [PlatoService, ConsumoService, ConsultaService, ClienteService, LoginService, LoginGuard ,PerfilService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

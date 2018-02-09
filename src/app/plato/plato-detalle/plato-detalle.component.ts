@@ -21,11 +21,11 @@ export class PlatoDetalleComponent implements OnInit {
     this.route.params.subscribe(
       (params: Params) => {
         this.id = params['id']; //es el que esta definido en el routing
-        console.log(this.id);
+        //console.log(this.id);
 
         this.platoService.getPlato(this.id).subscribe(data => {
           this.plato = data;
-          console.log(this.plato);
+          //console.log(this.plato);
         });        
       }
     )

@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../_service/login.service';
 
@@ -9,7 +9,8 @@ import { LoginService } from '../_service/login.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor( private router: Router,private loginService: LoginService) { }
+
+  constructor( private router: Router,private loginService: LoginService,private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
@@ -17,6 +18,8 @@ export class HeaderComponent implements OnInit {
     this.loginService.cerrarSesion();
   }
 miPerfil(){
-  this.router.navigate(['perfil']);
+  
+  console.log(this.route);
+  this.router.navigate(['perfil'],{ relativeTo: this.route });
 }
 }

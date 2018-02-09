@@ -1,3 +1,33 @@
-<p>
-  perfil works!
-</p>
+<div *ngIf="perfil">
+<div class="row" >
+  <div class="col-xs-12">   
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{perfil.nombre}}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <img [src]="perfil.fotoUrl" alt="{{perfil.nombre}}" class="img-responsive" style="max-height: 300px;">
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>{{perfil.direccion}}</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12"><hr></div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-success" (click)="editarPerfil()" [routerLink]="[perfil.id]" routerLinkActive="active" >Editar</button>
+      <button type="button" class="btn btn-danger" routerLink="/plato">Cancelar</button>
+    </div> 
+    <hr>
+</div>
+</div>
+
+
