@@ -34,7 +34,7 @@ export class PlatoEdicionComponent implements OnInit {
  
   operar() {
     let nuevoPlato = new Plato(this.form.value['id'], this.form.value['nombre'], this.form.value['urlImagen'], this.form.value['precio']);
-
+console.log(nuevoPlato);
     if (this.edicion) {
       this.platoService.actualizarPlato(nuevoPlato)        
     } else {

@@ -25,7 +25,8 @@ const appRoutes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full'},
     { path: 'login', component: LoginComponent}, 
     { path: 'perfil',component: PrincipalComponent,children:[{path: 'detalle',component:PerfilComponent},
-    { path: 'editar/:id', component:PerfilDetalleComponent}],canActivate: [LoginGuard]}
+    { path: 'editar/:id', component:PerfilDetalleComponent}],canActivate: [LoginGuard]},
+    { path: 'perfil/editar/:id/perfil',redirectTo:'perfil',pathMatch:'full'}
 ]
 
 @NgModule({

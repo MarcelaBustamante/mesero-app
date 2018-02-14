@@ -54,9 +54,12 @@ export class PerfilDetalleComponent implements OnInit {
   }
 
   cambiar() {
-    let nuevoPerfil = new Perfil(this.form.value['id'], this.form.value['nombre'], this.form.value['urlImagen'], this.form.value['direccion']);
+    let nuevoPerfil = new Perfil(this.id, this.form.value['nombre'], this.form.value['urlImagen'], this.form.value['direccion']);
+    console.log(nuevoPerfil);
     this.perfilService.actualizarPerfil(nuevoPerfil);
     this.router.navigate(['perfil'], { relativeTo: this.route });
+
+   
   }
 
 }
